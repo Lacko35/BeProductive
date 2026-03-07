@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeProductive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/statistics.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:16px;">
+                <a href="dashboard.html" class="back-btn">← Početna</a>
+                <div class="logo">
+                    <div class="logo-icon">✅</div>
+                    <span>BeProductive</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </div>
+                <div class="user-button">
+                    <div class="user-avatar" id="userAvatar"></div>
+                    <span class="user-name" id="userName"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="page-title">Statistike</div>
+            <div class="page-subtitle">Pregled tvojih taskova i produktivnosti</div>
+        </div>
+
+        <!-- Summary kartice -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="statTotal">0</div>
+                    <div class="stat-label">Ukupno taskova</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="statCompleted">0</div>
+                    <div class="stat-label">Završenih</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="statPending">0</div>
+                    <div class="stat-label">U toku</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-info">
+                    <div class="stat-value" id="statHigh">0</div>
+                    <div class="stat-label">Visok prioritet</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grafikoni -->
+        <div class="section-title">📊 Grafički prikaz</div>
+        <div class="charts-grid">
+
+            <!-- Nedeljni grafikon -->
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-card-title">
+                        <span>📅</span> Nedeljni prikaz
+                    </div>
+                    <div class="chart-nav">
+                        <button class="chart-nav-btn" onclick="changeWeek(-1)">‹</button>
+                        <div class="chart-nav-label" id="weekLabel">–</div>
+                        <button class="chart-nav-btn" onclick="changeWeek(1)">›</button>
+                    </div>
+                </div>
+                <canvas id="weeklyChart" height="180"></canvas>
+                <div class="chart-footer">
+                    <div class="chart-footer-stat">
+                        <div class="chart-footer-value" id="weekTotal">0</div>
+                        <div class="chart-footer-label">Ove nedelje</div>
+                    </div>
+                    <div class="chart-footer-stat">
+                        <div class="chart-footer-value" id="weekBest">–</div>
+                        <div class="chart-footer-label">Najbolji dan</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mesečni grafikon -->
+            <div class="chart-card">
+                <div class="chart-card-header">
+                    <div class="chart-card-title">
+                        <span>📆</span> Mesečni prikaz
+                    </div>
+                    <div class="chart-nav">
+                        <button class="chart-nav-btn" onclick="changeYear(-1)">‹</button>
+                        <div class="chart-nav-label" id="yearLabel">–</div>
+                        <button class="chart-nav-btn" onclick="changeYear(1)">›</button>
+                    </div>
+                </div>
+                <canvas id="monthlyChart" height="180"></canvas>
+                <div class="chart-footer">
+                    <div class="chart-footer-stat">
+                        <div class="chart-footer-value" id="yearTotal">0</div>
+                        <div class="chart-footer-label">Ove godine</div>
+                    </div>
+                    <div class="chart-footer-stat">
+                        <div class="chart-footer-value" id="yearBest">–</div>
+                        <div class="chart-footer-label">Najbolji mesec</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../scripts/statistics.js"></script>
+</body>
+</html>

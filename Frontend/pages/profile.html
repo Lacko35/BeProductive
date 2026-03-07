@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BeProductive</title>
+    <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div style="display:flex; align-items:center; gap:16px;">
+                <a href="dashboard.html" class="back-btn">← Početna</a>
+                <div class="logo">
+                    <div class="logo-icon">✅</div>
+                    <span>BeProductive</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </div>
+                
+                <div class="user-menu" id="userMenu">
+                    <div class="user-button">
+                        <div class="user-avatar" id="userAvatar"></div>
+                        <span class="user-name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="register" class="form-content">
+            <h2>Izmenite podatke</h2>
+                <div class="input-group">
+                    <label for="register-email">Email adresa</label>
+                    <input type="email" id="register-email" placeholder="vas@email.com" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="register-username">Korisničko ime</label>
+                    <input type="text" id="register-username" placeholder="Kori12#" required>
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="register-password">Lozinka</label>
+                    <div class="password-toggle">
+                        <input type="password" id="register-password" placeholder="••••••••" required minlength="8">
+                    </div>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="input-group">
+                    <label for="imageSelector">Odaberite profilnu sliku</label>
+                    <div class="file-input">
+                        <input type="file" id="imageSelector" accept="image/*">
+                        <span class="file-button">Choose File</span>
+                        <span class="file-name">No file chosen</span>
+                    </div>
+                    <span class="error-message" id="image-error"></span>
+                </div>                    
+                <button onclick="changeUserProfile()">Primeni izmene</button>
+                <button id="delete_btn" onclick="openModal()">Obrisite profil</button>
+            </div>
+        </div>
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-icon">⚠</div>
+                <h2>Brisanje naloga</h2>
+                <p>Da li ste sigurni da želite da obrišete nalog? Ova akcija je trajna i ne može se poništiti.</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-cancel" onclick="closeModal()">Otkaži</button>
+                    <button class="btn btn-delete" onclick="deleteUserProfile()">Obriši</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>

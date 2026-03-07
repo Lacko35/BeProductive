@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeChat sign-in/sign-up</title>
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab('login')">Prijava</div>
+                <div class="tab" onclick="switchTab('register')">Registracija</div>
+            </div>
+
+            <div id="login" class="form-content active">
+                <h2>Dobrodošli nazad!</h2>
+                <div>
+                    <div class="input-group">
+                        <label for="login-email">Email adresa</label>
+                        <input type="email" id="login-email" placeholder="vas@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Lozinka</label>
+                        <div class="password-toggle">
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    <button onclick="login()">Prijavi se</button>
+                </div>
+            </div>
+
+            <div id="register" class="form-content">
+                <h2>Kreirajte nalog</h2>
+                <div>
+                    <div class="input-group">
+                        <label for="register-name">Ime i prezime</label>
+                        <input type="text" id="register-name" placeholder="Petar Petrović" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-email">Email adresa</label>
+                        <input type="email" id="register-email" placeholder="vas@email.com" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-username">Korisničko ime</label>
+                        <input type="text" id="register-username" placeholder="Kori12#" required>
+                        <span class="error-message" id="username-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-password">Lozinka</label>
+                        <div class="password-toggle">
+                            <input type="password" id="register-password" placeholder="••••••••" required minlength="8">
+                        </div>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-confirm">Potvrdite lozinku</label>
+                        <div class="password-toggle">
+                            <input type="password" id="register-confirm" placeholder="••••••••" required>
+                        </div>
+                        <span class="error-message" id="confirm-error"></span>
+                    </div>
+                    <button onclick="register()">Registruj se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_table">
+        <div class="header">
+            <h1>🏆 Top 3 Korisnika</h1>
+            <p>Najvredniji članovi naše zajednice</p>
+        </div>
+        
+        <div class="leaderboard-content">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rang</th>
+                            <th>Korisničko ime</th>
+                            <th>Taskovi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="rank_cell">
+                                <span class="rank-medal rank-1 rank_class">🥇</span>
+                            </td>
+                            <td class="username-cell"></td>
+                            <td class="tasks-cell">
+                                <span class="task-badge"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="rank_cell">
+                                <span class="rank-medal rank-2 rank_class">🥈</span>
+                            </td>
+                            <td class="username-cell"></td>
+                            <td class="tasks-cell">
+                                <span class="task-badge"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="rank-cell">
+                                <span class="rank-medal rank-3 rank_class">🥉</span>
+                            </td>
+                            <td class="username-cell"></td>
+                            <td class="tasks-cell">
+                                <span class="task-badge"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <span>Uspešno ste se ulogovali, kroz par sekundi ćete biti prebačeni na glavnu stranicu.</span>
+        </div>
+    </div>
+
+    <script src="../scripts/login.js"></script>
+</body>
+</html>

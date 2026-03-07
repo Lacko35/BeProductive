@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BeProductive</title>
+    <link rel="stylesheet" href="../styles/dasboard.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">✅</div>
+                <span>BeProductive</span>
+            </div>
+            
+            <div class="header-right">
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <span class="theme-icon sun-icon">☀️</span>
+                    <span class="theme-icon moon-icon">🌙</span>
+                </div>
+                
+                <div class="user-menu" id="userMenu">
+                    <div class="user-button" onclick="toggleUserMenu()">
+                        <div id="userAvatar" class="user-avatar"></div>
+                        <span class="user-name"></span>
+                        <span class="dropdown-arrow">▼</span>
+                    </div>
+                    
+                    <div class="dropdown-menu">
+                        <a href="profile.html" class="dropdown-item">
+                            <span>👤</span>
+                            <span>Moj profil</span>
+                        </a>
+                        <div class="dropdown-item logout" onclick="logout()">
+                            <span>🚪</span>
+                            <span>Odjavi se</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="welcome-section">
+            <h1 class="welcome-title">Dobrodošli nazad, </h1>
+            <p class="welcome-subtitle">Nadamo se da ćete imati produktivan dan.</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card" onclick="openStatistic()">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Statistika</h3>
+                <p class="card-description">Pregledajte vašu aktivnost i statistiku performansi.</p>
+            </div>
+
+            <div class="card" onclick="openTasks()">
+                <div class="card-icon">💼</div>
+                <h3 class="card-title">Zadaci</h3>
+                <p class="card-description">Pratite i upravljajte svojim zadacima.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>

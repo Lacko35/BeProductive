@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeProductive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/task.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+<header>
+    <div class="header-container">
+        <div style="display:flex; align-items:center; gap:16px;">
+            <a href="dashboard.html" class="back-btn">← Početna</a>
+            <div class="logo">
+                <div class="logo-icon">✅</div>
+                <span>BeProductive</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </div>
+            <div class="user-button">
+                <div class="user-avatar" id="userAvatar"></div>
+                <span class="user-name" id="userName"></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- MAIN -->
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Moji Taskovi</h1>
+            <p class="page-subtitle">Upravljaj svojim obavezama na jednom mestu</p>
+        </div>
+
+        <!-- ADD TASK -->
+        <div class="add-task-section">
+            <div class="section-title">
+                <span>➕</span> Dodaj novi task
+            </div>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label>Naslov *</label>
+                    <input type="text" id="newTitle" placeholder="Unesite naslov taska..." />
+                </div>
+                <div class="form-group full-width">
+                    <label>Opis</label>
+                    <textarea id="newDescription" placeholder="Opišite task..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Prioritet</label>
+                    <select id="newPriority">
+                        <option value="0">🟢 Nizak</option>
+                        <option value="1" selected>🟡 Srednji</option>
+                        <option value="2">🔴 Visok</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rok (Due Date)</label>
+                    <input type="datetime-local" id="newDueDate" />
+                </div>
+                <button class="btn-add" onclick="addTask()">✦ Dodaj Task</button>
+            </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters-row">
+            <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">Svi <span class="filter-count" id="countAll">0</span></button>
+            <button class="filter-btn" data-filter="active" onclick="setFilter('active', this)">Aktivni <span class="filter-count" id="countActive">0</span></button>
+            <button class="filter-btn" data-filter="completed" onclick="setFilter('completed', this)">Završeni <span class="filter-count" id="countCompleted">0</span></button>
+            <button class="filter-btn" data-filter="high" onclick="setFilter('high', this)">🔴 Visok prioritet <span class="filter-count" id="countHigh">0</span></button>
+        </div>
+
+        <!-- TASKS GRID -->
+        <div class="tasks-grid" id="tasksGrid"></div>
+    </main>
+
+    <!-- EDIT MODAL -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="modal-title">✏️ Izmeni Task</span>
+                <button class="modal-close" onclick="closeEditModal()">✕</button>
+            </div>
+            <div class="form-grid">
+                <input type="hidden" id="editTaskId" />
+                <div class="form-group">
+                    <label>Prioritet</label>
+                    <select id="editPriority">
+                        <option value="0">🟢 Nizak</option>
+                        <option value="1">🟡 Srednji</option>
+                        <option value="2">🔴 Visok</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Rok (Due Date)</label>
+                    <input type="datetime-local" id="editDueDate" />
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeEditModal()">Otkaži</button>
+                <button class="btn-primary" onclick="saveEdit()">Sačuvaj izmene</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONFIRM DELETE -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">🗑️</div>
+            <div class="confirm-title">Obriši task?</div>
+            <div class="confirm-msg">Ova akcija je nepovratna. Da li ste sigurni?</div>
+            <div class="confirm-actions">
+                <button class="btn-secondary" onclick="closeConfirm()">Otkaži</button>
+                <button class="btn-danger" onclick="confirmDelete()">Obriši</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/task.js"></script>
+</body>
+</html>
