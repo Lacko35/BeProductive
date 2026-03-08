@@ -39,7 +39,7 @@ Database:
 	Frontend:
 		Otvoriti 'Frontend/pages/login.html' u browser ili putem Live Server ekstenzije u VS Code pokrenuti navedenu stranicu.
 
-	### Database:
+	Database:
 		Sama baza se kreira komandom: `sqllocaldb create imeBaze` gde je 'imeBaze' ime koje se navodi u okviru CS-a u appSettings.json fajlu.
 		Nakon toga je potrebno startovati samu bazu podataka naredbom 'sqllocaldb start imeBaze'.
 		Nakon toga, kreira se migracija pomocu 'dotnet ef migrations add InitialState'.
