@@ -13,8 +13,8 @@ Web aplikacija koja se bavi pracenjem korisnickih aktivnosti putem izvrsavanja z
 		CSS
 		JavaScript (Vanilla)
 
-Database:
-	Za potrebe ove aplikacije je koriscen SQL LocalDB kao i Azure Data Studio za pregled same baze.
+	Database:
+		Za potrebe ove aplikacije je koriscen SQL LocalDB kao i Azure Data Studio za pregled same baze.
 
 ## Funkcionalnosti
 	Registracija korisnika
