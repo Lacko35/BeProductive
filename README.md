@@ -3,16 +3,15 @@
 Web aplikacija koja se bavi pracenjem korisnickih aktivnosti putem izvrsavanja zadataka.
 
 ## Tehnologije
+	Backend:
+		ASP.NET Core Web API
+		C#
+		Entity Framework Core
 
-Backend:
-	ASP.NET Core Web API
-	C#
-	Entity Framework Core
-
-Frontend:
-	HTML
-	CSS
-	JavaScript (Vanilla)
+	Frontend:
+		HTML
+		CSS
+		JavaScript (Vanilla)
 
 Database:
 	Za potrebe ove aplikacije je koriscen SQL LocalDB kao i Azure Data Studio za pregled same baze.
@@ -28,7 +27,7 @@ Database:
 	Statisticko pracenje izvrsavanja zadataka na nedeljnom i mesecnom nivou
 
 ## Pokretanje projekta
-	### Backend:
+	Backend:
 		cd Backend
 		dotnet restore
 		dotnet build
@@ -36,7 +35,7 @@ Database:
 		
 		Backend se pokrece na 'http://localhost:5000'
 	
-	### Frontend:
+	Frontend:
 		Otvoriti 'Frontend/pages/login.html' u browser ili putem Live Server ekstenzije u VS Code pokrenuti navedenu stranicu.
 
 	### Database:
