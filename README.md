@@ -1,6 +1,5 @@
 # ProfileCreator
-
-Web aplikacija koja se bavi pracenjem korisnickih aktivnosti putem izvrsavanja zadataka.
+	Web aplikacija koja se bavi pracenjem korisnickih aktivnosti putem izvrsavanja zadataka.
 
 ## Tehnologije
 	Backend:
