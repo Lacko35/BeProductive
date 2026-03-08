@@ -25,6 +25,7 @@ Database:
 	Dodavanje, brisanje, izmena zadataka
 	Pregled zadataka i filtriranje po kriterijumima
 	Statisticko pracenje izvrsavanja zadataka na nedeljnom i mesecnom nivou
+	Brisanje korisnickog profila
 
 ## Pokretanje projekta
 	Backend:
